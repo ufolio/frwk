@@ -1,0 +1,59 @@
+{
+	"name": "",
+
+	"pages": {
+
+		"home": {
+			"once": true,
+			"title": "",
+			"fields": {
+				"field": {
+					"type": "input",
+					"name": "",
+					"title": ""
+				},
+				"group": {
+					"type": "panel",
+					"fields": {
+						"field": {
+							"type": "input",
+							"name": "",
+							"title": ""
+						}
+					}
+				},
+				"group": {
+					"type": "tabs",
+					"tabs": [
+						{
+							"title": "",
+							"fields": {}
+						},
+						{
+							"title": "",
+							"fields": {}
+						}
+					]
+				}
+			}
+		},
+
+		"catalog": {
+			"once": false,
+			"title": "",
+			"fields": {
+				"includ": "catalog.json"
+			}
+		},
+
+		"contacts": {}
+	},
+
+	"seo": {
+		"home": {
+			"title": "",
+			"desc": "",
+			"keys": ""
+		}
+	}
+}

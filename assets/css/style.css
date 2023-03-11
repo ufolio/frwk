@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+	--font-family: 'Roboto', sans-serif;
+	--color-primary: #0360d0;
+	--color-text: #cbcbcb;
+
+	--color-bg-1: #101013;
+	--color-bg-2: #25252b;
+	--color-bg-3: #19191e;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background-color: #25252b;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #101013;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	box-sizing: border-box;
+	font-family: var(--font-family);
+	color: var(--color-text);
+}
+html {}
+body {}
+body.dark {
+	background-color: #000;
+}
+
+pre {
+	font-family: consolas;
+	color: green;
+}
+
+.flex {
+	display: flex;
+	grid-gap: 20px;
+	height: 100%;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.flex > div {
+	display: flex;
+	grid-gap: 20px;
+}
+
+#app {
+	padding: 0 0px 0px;
+	overflow-x: hidden;
+	position: relative;
+	background-color: var(--color-bg-1);
+	height: 100vh;
+	display: grid;
+	grid-gap: 0px;
+	grid-template-rows: auto auto 1fr;
+	grid-template-columns: auto 1fr;
+	grid-template-areas:
+		"header header"
+		"sidebar actions"
+		"sidebar main";
+}
+
+.header {
+	grid-area: header;
+
+	background-color: var(--color-bg-3);
+	border-bottom: 0px solid var(--color-bg-2);
+	padding: 0px 20px;
+
+	height: 70px;
+	margin-bottom: 2px;
+	margin-left: 0px;
+	margin-right: 0px;
+	/*border-radius: 10px;*/
+}
+.header .logo {
+	min-width: 230px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 20px;
+}
+.header .logo p {}
+.header a {
+	color: var(--color-text);
+}
+
+.sidebar {
+	grid-area: sidebar;
+	display: flex;
+	flex-direction: column;
+	min-width: 250px;
+	padding: 0px;
+	margin-right: 2px;
+}
+.sidebar ul {
+	list-style: none;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-bg-3);
+	border-radius: 0px;
+	padding: 10px 0px;
+	margin: 0 0 2px;
+}
+.sidebar ul:first-child {
+	height: auto;
+}
+.sidebar ul:last-child li a,
+.sidebar ul:first-child li a {
+	margin-top: -10px;
+	margin-bottom: -10px;
+	padding: 20px 20px;
+	border-radius: 0px;
+}
+.sidebar ul:last-child {
+	height: auto;
+	margin-bottom: 0;
+}
+.sidebar ul li {
+	display: block;
+	margin: 0 0;
+}
+.sidebar ul li.title {
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+	padding: 10px 20px;
+	font-size: 12px;
+	opacity: 0.5;
+}
+.sidebar ul li a {
+	display: block;
+	padding: 10px 20px;
+	font-size: 14px;
+	color: var(--color-text);
+	border: none;
+}
+.sidebar ul li a:hover {
+	color: var(--color-text);
+	background-color: var(--color-bg-2);
+}
+.sidebar ul li.active a {
+	color: var(--color-primary);
+	background-color: var(--color-bg-2);
+}
+.sidebar ul li span {
+	display: inline-block;
+	background-color: #b32d2d;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;
+	width:  20px;
+	height: 20px;
+	margin-left: 10px;
+}
+
+.actions {
+	grid-area: actions;
+	padding: 10px 10px;
+	border-radius: 0px;
+	background-color: var(--color-bg-3);
+	margin-right: -3px;
+}
+.actions p {
+	font-weight: bold;
+	font-size: 22px;
+	margin: 0 10px;
+}
+.actions > div {
+	grid-gap: 10px;
+}
+
+.content {
+	grid-area: main;
+	overflow-y: auto;
+	margin: 2px 0 0;
+	margin-right: -20px;
+	border-radius: 0px;
+}
+.content .inner {
+	background-color: var(--color-bg-3);
+	border-radius: 0px;
+	padding: 20px;
+	margin-right: 10px;
+}
+.content .inner > * {
+	margin-bottom: 20px;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+
+p {
+	font-size: 14px;
+	line-height: 1.4;
+}
+b { font-size: 14px; }
+i { font-size: 14px; }
+
+ul {
+	margin-left: 20px;
+}
+ul li {
+	font-size: 14px;
+	margin: 2px 0;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: var(--color-primary);
+	border-bottom: 1px solid transparent;
+}
+a:hover {
+	color: var(--color-primary);
+	border-bottom: 1px solid var(--color-primary);
+}
+a:focus {}
+a:active {}
+
+button {
+	background-color: var(--color-bg-2);
+	text-align: center;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+}
+button:hover {}
+
+button.primary {
+	color: #fff;
+	background-color: var(--color-primary);
+}
+button.primary:hover {}
+
+input,
+textarea,
+select {
+	padding: 10px 15px;
+	border-radius: 5px;
+	font-size: 14px;
+	border: none;
+	background-color: var(--color-bg-2);
+	width: 100%;
+}
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+}
+
+input {}
+textarea {
+	height: 100px;
+}
+select {}
+
+label {
+	display: block;
+}
+label {
+	display: flex;
+	align-items: center;
+}
+label > *:nth-child(odd) {
+	width: 300px;
+}
+label > *:nth-child(even) {
+	width: 100%;
+}
+label p {
+	margin: 0;
+	margin-right: -20px;
+}
+
+input[type=checkbox],
+input[type=radio] {}
+
+.input {}
+
+.checkbox label,
+.radio label {
+	margin: 10px 0;
+}
+.checkbox input:first-child,
+.radio input:first-child {
+	width: auto;
+	margin-right: 10px;
+}
+
+.switch {}
+
+.file, .img {}
+.file span, .img span {
+	display: block;
+	padding: 10px 15px;
+	border-radius: 5px;
+	border: 3px dashed var(--color-bg-2);
+	background-color: transparent;
+	font-size: 14px;
+	width: 100%;
+	height: 100px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.file span b, .img span b {
+	font-weight: normal;
+	opacity: 0.3;
+}
+.file input[type=file],
+.img input[type=file] {
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.img {}
+.img img {}
+.img input[type=file] {}
+
+table {
+	width: 100%;
+	text-align: left;
+	border-radius: 5px;
+	border: 1px solid var(--color-bg-2);
+}
+table tr {}
+table th {
+	padding: 10px 15px;
+	border: 1px solid var(--color-bg-2);
+}
+table td {
+	padding: 10px 15px;
+	border: 1px solid var(--color-bg-2);
+}
+
+picture {}
+picture img {}
+
+.msg {
+	padding: 20px;
+	background-color: var(--color-bg-2);
+	border-radius: 5px;
+}
+.msg.info {}
+.msg.danger {}
+
+.tabs {}
+
+.cards {}
+
+.list {}
+
+.accord {}
